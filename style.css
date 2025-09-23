@@ -1,4 +1,4 @@
-body {font-family: "Microsoft YaHei", Arial, sans-serif; margin:0; background:#f9f9f9;}
+body {font-family:"Microsoft YaHei", Arial, sans-serif; margin:0; background:#f9f9f9;}
 .container {width:90%; max-width:1100px; margin:0 auto;}
 header {background:#003366; color:#fff; padding:15px 0; display:flex; align-items:center; justify-content:space-between;}
 header .logo {font-size:18px;}
@@ -11,4 +11,6 @@ nav a.active, nav a:hover {text-decoration:underline;}
 .grid {display:flex; gap:20px;}
 .card {background:#fff; padding:20px; border-radius:8px; flex:1; text-align:center; box-shadow:0 0 10px rgba(0,0,0,0.1);}
 .card img {max-width:100%; border-radius:8px;}
+.page {padding:40px 0; background:#fff; border-radius:8px;}
 footer {background:#003366; color:#fff; text-align:center; padding:15px 0; margin-top:30px;}
+[data-lang]{display:none;}

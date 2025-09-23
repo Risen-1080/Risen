@@ -5,15 +5,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>联系我们 | Contact - 潍坊瑞司恩工业科技有限公司</title>
 <link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
+emailjs.init("6dA8y7utpJK6zFv2a");
+
 function switchLang(lang) {
   document.querySelectorAll("[data-lang]").forEach(el => {
     el.style.display = el.dataset.lang === lang ? "block" : "none";
   });
 }
+
+window.addEventListener("DOMContentLoaded", function() {
+  switchLang('zh');
+
+  const form = document.getElementById("contact-form");
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    emailjs.sendForm('service_xyz123', 'template_abc456', this)
+      .then(function() {
+        alert("提交成功，邮件已发送！");
+      }, function(error) {
+        alert("提交失败，请稍后再试。\n" + JSON.stringify(error));
+      });
+
+    this.reset();
+  });
+});
 </script>
 </head>
-<body onload="switchLang('zh')">
+<body>
 
 <header>
 <div class="container">
@@ -45,20 +66,20 @@ function switchLang(lang) {
   <p data-lang="zh">您也可以通过以下表单给我们留言：</p>
   <p data-lang="en">You can also contact us via the form below:</p>
 
-  <!-- 表单示例 Formspree，可替换为你自己的 Form ID -->
-  <form action="https://formspree.io/f/mqazbyld" method="POST">
+  <!-- EmailJS 表单 -->
+  <form id="contact-form">
     <label data-lang="zh">您的姓名:<br>
-      <input type="text" name="name" required>
+      <input type="text" name="user_name" required>
     </label>
     <label data-lang="en">Name:<br>
-      <input type="text" name="name" required>
+      <input type="text" name="user_name" required>
     </label><br>
 
     <label data-lang="zh">您的邮箱:<br>
-      <input type="email" name="email" required>
+      <input type="email" name="user_email" required>
     </label>
     <label data-lang="en">Email:<br>
-      <input type="email" name="email" required>
+      <input type="email" name="user_email" required>
     </label><br>
 
     <label data-lang="zh">留言内容:<br>

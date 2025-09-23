@@ -1,53 +1,84 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>联系我们 - 潍坊瑞司恩工业科技有限公司</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>联系我们 | Contact - 潍坊瑞司恩工业科技有限公司</title>
+<link rel="stylesheet" href="style.css">
+<script>
+function switchLang(lang) {
+  document.querySelectorAll("[data-lang]").forEach(el => {
+    el.style.display = el.dataset.lang === lang ? "block" : "none";
+  });
+}
+</script>
 </head>
-<body>
-  <header>
-    <div class="container">
-      <h1 class="logo">潍坊瑞司恩工业科技有限公司</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">首页</a></li>
-          <li><a href="about.html">关于我们</a></li>
-          <li><a href="products.html">产品中心</a></li>
-          <li><a href="contact.html" class="active">联系我们</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<body onload="switchLang('zh')">
 
-  <section class="page">
-    <div class="container">
-      <h2>联系我们</h2>
-      <p><strong>电话：</strong> +86 18265601080</p>
-      <p><strong>Email：</strong> MrRisen1107@gmail.com</p>
-      <p><strong>WeChat / WhatsApp：</strong> 同电话</p>
-      <p>您也可以通过以下表单给我们留言：</p>
+<header>
+<div class="container">
+  <h1 class="logo" data-lang="zh">潍坊瑞司恩工业科技有限公司</h1>
+  <h1 class="logo" data-lang="en">Weifang Risen Industrial Technology Co., Ltd.</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html" data-lang="zh">首页</a><a href="index.html" data-lang="en">Home</a></li>
+      <li><a href="about.html" data-lang="zh">关于我们</a><a href="about.html" data-lang="en">About</a></li>
+      <li><a href="products.html" data-lang="zh">产品中心</a><a href="products.html" data-lang="en">Products</a></li>
+      <li><a href="contact.html" class="active" data-lang="zh">联系我们</a><a href="contact.html" class="active" data-lang="en">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="lang-switch">
+    <button onclick="switchLang('zh')">中文</button>
+    <button onclick="switchLang('en')">EN</button>
+  </div>
+</div>
+</header>
 
-      <form action="https://formspree.io/f/your-form-id" method="POST">
-        <label>您的姓名:<br>
-          <input type="text" name="name" required>
-        </label><br>
-        <label>您的邮箱:<br>
-          <input type="email" name="email" required>
-        </label><br>
-        <label>留言内容:<br>
-          <textarea name="message" rows="5" required></textarea>
-        </label><br>
-        <button type="submit">提交</button>
-      </form>
-    </div>
-  </section>
+<section class="page">
+<div class="container">
+  <h2 data-lang="zh">联系我们</h2>
+  <h2 data-lang="en">Contact Us</h2>
+  <p data-lang="zh"><strong>电话：</strong> +86 18265601080</p>
+  <p data-lang="en"><strong>Phone:</strong> +86 18265601080</p>
+  <p data-lang="zh"><strong>Email：</strong> MrRisen1107@gmail.com</p>
+  <p data-lang="en"><strong>Email:</strong> MrRisen1107@gmail.com</p>
+  <p data-lang="zh">您也可以通过以下表单给我们留言：</p>
+  <p data-lang="en">You can also contact us via the form below:</p>
 
-  <footer>
-    <div class="container">
-      <p>© 2025 潍坊瑞司恩工业科技有限公司</p>
-    </div>
-  </footer>
+  <!-- 表单示例 Formspree，可替换为你自己的 Form ID -->
+  <form action="https://formspree.io/f/mqazbyld" method="POST">
+    <label data-lang="zh">您的姓名:<br>
+      <input type="text" name="name" required>
+    </label>
+    <label data-lang="en">Name:<br>
+      <input type="text" name="name" required>
+    </label><br>
+
+    <label data-lang="zh">您的邮箱:<br>
+      <input type="email" name="email" required>
+    </label>
+    <label data-lang="en">Email:<br>
+      <input type="email" name="email" required>
+    </label><br>
+
+    <label data-lang="zh">留言内容:<br>
+      <textarea name="message" rows="5" required></textarea>
+    </label>
+    <label data-lang="en">Message:<br>
+      <textarea name="message" rows="5" required></textarea>
+    </label><br>
+
+    <button type="submit" data-lang="zh">提交</button>
+    <button type="submit" data-lang="en">Submit</button>
+  </form>
+</div>
+</section>
+
+<footer>
+<div class="container">
+  <p data-lang="zh">© 2025 潍坊瑞司恩工业科技有限公司</p>
+  <p data-lang="en">© 2025 Weifang Risen Industrial Technology Co., Ltd.</p>
+</div>
+</footer>
 </body>
 </html>

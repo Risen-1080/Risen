@@ -1,43 +1,54 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>产品中心 - 潍坊瑞司恩工业科技有限公司</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>产品中心 | Products - 潍坊瑞司恩工业科技有限公司</title>
+<link rel="stylesheet" href="style.css">
+<script>
+function switchLang(lang) {
+  document.querySelectorAll("[data-lang]").forEach(el => {
+    el.style.display = el.dataset.lang === lang ? "block" : "none";
+  });
+}
+</script>
 </head>
-<body>
-  <header>
-    <div class="container">
-      <h1 class="logo">潍坊瑞司恩工业科技有限公司</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">首页</a></li>
-          <li><a href="about.html">关于我们</a></li>
-          <li><a href="products.html" class="active">产品中心</a></li>
-          <li><a href="contact.html">联系我们</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<body onload="switchLang('zh')">
 
-  <section class="page">
-    <div class="container">
-      <h2>产品中心</h2>
-      <ul>
-        <li>抛丸机设备</li>
-        <li>抛丸机工具钢配件（叶片、分丸轮、定向套、护板等）</li>
-        <li>环保除尘设备及布袋</li>
-        <li>金属磨料（钢丸、钢丝切丸、不锈钢丸）</li>
-        <li>高铬钢及其他定制件</li>
-      </ul>
-    </div>
-  </section>
+<header>
+<div class="container">
+  <h1 class="logo" data-lang="zh">潍坊瑞司恩工业科技有限公司</h1>
+  <h1 class="logo" data-lang="en">Weifang Risen Industrial Technology Co., Ltd.</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html" data-lang="zh">首页</a><a href="index.html" data-lang="en">Home</a></li>
+      <li><a href="about.html" data-lang="zh">关于我们</a><a href="about.html" data-lang="en">About</a></li>
+      <li><a href="products.html" class="active" data-lang="zh">产品中心</a><a href="products.html" class="active" data-lang="en">Products</a></li>
+      <li><a href="contact.html" data-lang="zh">联系我们</a><a href="contact.html" data-lang="en">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="lang-switch">
+    <button onclick="switchLang('zh')">中文</button>
+    <button onclick="switchLang('en')">EN</button>
+  </div>
+</div>
+</header>
 
-  <footer>
-    <div class="container">
-      <p>© 2025 潍坊瑞司恩工业科技有限公司</p>
-    </div>
-  </footer>
-</body>
-</html>
+<section class="page">
+<div class="container">
+  <h2 data-lang="zh">产品中心</h2>
+  <h2 data-lang="en">Products</h2>
+  <ul data-lang="zh">
+    <li>抛丸机设备</li>
+    <li>抛丸机工具钢配件（叶片、分丸轮、定向套、护板等）</li>
+    <li>环保除尘设备及布袋</li>
+    <li>金属磨料（钢丸、钢丝切丸、不锈钢丸）</li>
+    <li>高铬钢及其他定制件</li>
+  </ul>
+  <ul data-lang="en">
+    <li>Shot Blasting Machines</li>
+    <li>Shot Blasting Spare Parts (Blades, Impellers, Control Cages, Liners, etc.)</li>
+    <li>Dust Collector Systems & Bags</li>
+    <li>Metal Abrasives (Steel Shot, Steel Wire Cut Shot, Stainless Steel Shot)</li>
+    <li>High Chrome Steel and Custom Parts</li>
+ 

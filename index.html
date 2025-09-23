@@ -3,61 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>潍坊瑞司恩工业科技有限公司</title>
+  <title>潍坊瑞司恩工业科技有限公司 | Weifang Risen Industrial Technology Co., Ltd.</title>
   <link rel="stylesheet" href="style.css">
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll("[data-lang]").forEach(el => {
+        el.style.display = el.dataset.lang === lang ? "block" : "none";
+      });
+    }
+  </script>
 </head>
-<body>
-  <!-- 导航栏 -->
+<body onload="switchLang('zh')">
   <header>
     <div class="container">
-      <h1 class="logo">潍坊瑞司恩工业科技有限公司</h1>
+      <h1 class="logo" data-lang="zh">潍坊瑞司恩工业科技有限公司</h1>
+      <h1 class="logo" data-lang="en">Weifang Risen Industrial Technology Co., Ltd.</h1>
       <nav>
         <ul>
-          <li><a href="index.html">首页</a></li>
-          <li><a href="about.html">关于我们</a></li>
-          <li><a href="products.html">产品中心</a></li>
-          <li><a href="contact.html">联系我们</a></li>
+          <li><a href="index.html" class="active" data-lang="zh">首页</a><a href="index.html" class="active" data-lang="en">Home</a></li>
+          <li><a href="about.html" data-lang="zh">关于我们</a><a href="about.html" data-lang="en">About</a></li>
+          <li><a href="products.html" data-lang="zh">产品中心</a><a href="products.html" data-lang="en">Products</a></li>
+          <li><a href="contact.html" data-lang="zh">联系我们</a><a href="contact.html" data-lang="en">Contact</a></li>
         </ul>
       </nav>
+      <div class="lang-switch">
+        <button onclick="switchLang('zh')">中文</button>
+        <button onclick="switchLang('en')">EN</button>
+      </div>
     </div>
   </header>
 
-  <!-- Banner -->
   <section class="hero">
     <div class="container">
-      <h2>一站式抛丸机与配套耗材解决方案</h2>
-      <p>让采购更高效，品质更稳定</p>
+      <h2 data-lang="zh">一站式抛丸机与配套耗材解决方案</h2>
+      <h2 data-lang="en">One-stop Shot Blasting & Consumables Solution</h2>
+      <p data-lang="zh">让采购更高效，品质更稳定</p>
+      <p data-lang="en">Efficient Procurement, Reliable Quality</p>
     </div>
   </section>
 
-  <!-- 产品展示 -->
   <section class="products">
     <div class="container">
-      <h2>核心产品</h2>
+      <h2 data-lang="zh">核心产品</h2>
+      <h2 data-lang="en">Core Products</h2>
       <div class="grid">
         <div class="card">
-          <img src="images/product1.jpg" alt="抛丸机">
-          <h3>抛丸机设备</h3>
-          <p>高效耐用的抛丸清理设备，适用于多行业表面处理。</p>
+          <img src="images/product1.jpg" alt="">
+          <h3 data-lang="zh">抛丸机设备</h3>
+          <h3 data-lang="en">Shot Blasting Machines</h3>
+          <p data-lang="zh">高效耐用的抛丸清理设备。</p>
+          <p data-lang="en">Efficient and durable surface cleaning equipment.</p>
         </div>
         <div class="card">
-          <img src="images/product2.jpg" alt="抛丸机配件">
-          <h3>抛丸机配件</h3>
-          <p>叶片、分丸轮、定向套、护板等工具钢配件，现货供应。</p>
+          <img src="images/product2.jpg" alt="">
+          <h3 data-lang="zh">抛丸机配件</h3>
+          <h3 data-lang="en">Machine Spare Parts</h3>
+          <p data-lang="zh">叶片、分丸轮、定向套、护板等。</p>
+          <p data-lang="en">Blades, impellers, control cages, liners, etc.</p>
         </div>
         <div class="card">
-          <img src="images/product3.jpg" alt="环保除尘设备">
-          <h3>环保除尘设备</h3>
-          <p>布袋除尘器、滤芯，保障清洁生产环境。</p>
+          <img src="images/product3.jpg" alt="">
+          <h3 data-lang="zh">环保除尘设备</h3>
+          <h3 data-lang="en">Dust Collector Systems</h3>
+          <p data-lang="zh">布袋除尘器、滤芯，保障清洁生产环境。</p>
+          <p data-lang="en">Bag filters and cartridges for clean production.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 页脚 -->
   <footer>
     <div class="container">
-      <p>© 2025 潍坊瑞司恩工业科技有限公司 | 联系方式：WeChat / WhatsApp / 电话：+86 18265601080 | Email: MrRisen1107@gmail.com</p>
+      <p data-lang="zh">© 2025 潍坊瑞司恩工业科技有限公司 | 电话：+86 18265601080 | Email: MrRisen1107@gmail.com</p>
+      <p data-lang="en">© 2025 Weifang Risen Industrial Technology Co., Ltd. | Phone: +86 18265601080 | Email: MrRisen1107@gmail.com</p>
     </div>
   </footer>
 </body>

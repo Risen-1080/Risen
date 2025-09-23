@@ -1,39 +1,55 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>关于我们 - 潍坊瑞司恩工业科技有限公司</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>关于我们 | About - 潍坊瑞司恩工业科技有限公司</title>
+<link rel="stylesheet" href="style.css">
+<script>
+function switchLang(lang) {
+  document.querySelectorAll("[data-lang]").forEach(el => {
+    el.style.display = el.dataset.lang === lang ? "block" : "none";
+  });
+}
+</script>
 </head>
-<body>
-  <header>
-    <div class="container">
-      <h1 class="logo">潍坊瑞司恩工业科技有限公司</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">首页</a></li>
-          <li><a href="about.html" class="active">关于我们</a></li>
-          <li><a href="products.html">产品中心</a></li>
-          <li><a href="contact.html">联系我们</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<body onload="switchLang('zh')">
 
-  <section class="page">
-    <div class="container">
-      <h2>关于我们</h2>
-      <p>潍坊瑞司恩工业科技有限公司致力于抛丸机设备、配件、环保除尘设备、金属磨料等一站式解决方案。</p>
-      <p>我们拥有稳定的供应链体系，涵盖钢丸、钢丝切丸、不锈钢丸及高铬钢配件，并在山东、江苏及其他地区建立长期合作伙伴关系。</p>
-      <p>秉持“让采购更高效”的理念，我们不断为客户提供高性价比的产品与优质服务。</p>
-    </div>
-  </section>
+<header>
+<div class="container">
+  <h1 class="logo" data-lang="zh">潍坊瑞司恩工业科技有限公司</h1>
+  <h1 class="logo" data-lang="en">Weifang Risen Industrial Technology Co., Ltd.</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html" data-lang="zh">首页</a><a href="index.html" data-lang="en">Home</a></li>
+      <li><a href="about.html" class="active" data-lang="zh">关于我们</a><a href="about.html" class="active" data-lang="en">About</a></li>
+      <li><a href="products.html" data-lang="zh">产品中心</a><a href="products.html" data-lang="en">Products</a></li>
+      <li><a href="contact.html" data-lang="zh">联系我们</a><a href="contact.html" data-lang="en">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="lang-switch">
+    <button onclick="switchLang('zh')">中文</button>
+    <button onclick="switchLang('en')">EN</button>
+  </div>
+</div>
+</header>
 
-  <footer>
-    <div class="container">
-      <p>© 2025 潍坊瑞司恩工业科技有限公司</p>
-    </div>
-  </footer>
+<section class="page">
+<div class="container">
+  <h2 data-lang="zh">关于我们</h2>
+  <h2 data-lang="en">About Us</h2>
+  <p data-lang="zh">潍坊瑞司恩工业科技有限公司专注于抛丸机设备、配件、环保除尘设备、金属磨料及其他抛丸机相关配套产品，为客户提供一站式耗材解决方案。</p>
+  <p data-lang="en">Weifang Risen Industrial Technology Co., Ltd. focuses on shot blasting machines, parts, dust collector systems, metal abrasives, and other related products, providing one-stop consumables solutions for clients.</p>
+  <p data-lang="zh">秉持“让采购更高效”的理念，我们不断为客户提供高性价比的产品与优质服务。</p>
+  <p data-lang="en">Following the concept of "Efficient Procurement", we provide high-quality and cost-effective products and services for our customers.</p>
+</div>
+</section>
+
+<footer>
+<div class="container">
+  <p data-lang="zh">© 2025 潍坊瑞司恩工业科技有限公司</p>
+  <p data-lang="en">© 2025 Weifang Risen Industrial Technology Co., Ltd.</p>
+</div>
+</footer>
 </body>
 </html>

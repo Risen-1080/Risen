@@ -1,105 +1,90 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title data-i18n="contact_title">Contact</title><link rel="stylesheet" href="css/style.css"></head>
+<!doctype html>
+<html lang="zh">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>联系我们 | Contact - 潍坊瑞司恩工业科技有限公司</title>
-<link rel="stylesheet" href="style.css">
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-emailjs.init("6dA8y7utpJK6zFv2a");
-
-function switchLang(lang) {
-  document.querySelectorAll("[data-lang]").forEach(el => {
-    el.style.display = el.dataset.lang === lang ? "block" : "none";
-  });
-}
-
-window.addEventListener("DOMContentLoaded", function() {
-  switchLang('zh');
-
-  const form = document.getElementById("contact-form");
-  form.addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    emailjs.sendForm('service_xyz123', 'template_abc456', this)
-      .then(function() {
-        alert("提交成功，邮件已发送！");
-      }, function(error) {
-        alert("提交失败，请稍后再试。\n" + JSON.stringify(error));
-      });
-
-    this.reset();
-  });
-});
-</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title data-i18n="contact_title">Contact</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- ✅ 引入 EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function(){
+      emailjs.init("6dA8y7utpJK6zFv2a"); // ✅ 你的 Public Key
+    })();
+  </script>
 </head>
 <body>
+  <!-- 这里保留你原来的导航和表单 -->
+  <main class="container">
+    <h1 data-i18n="contact_title">Contact Us</h1>
+    <form id="contactForm" onsubmit="sendContactForm(event)">
+      <label>Name</label>
+      <input type="text" name="from_name" required>
+      <label>Email</label>
+      <input type="email" name="from_email" required>
+      <label>Company</label>
+      <input type="text" name="company">
+      <label>Message</label>
+      <textarea name="message" rows="6" required></textarea>
+      <button id="sendBtn" type="submit">Send</button>
+    </form>
+  </main>
 
-<header>
-<div class="container">
-  <h1 class="logo" data-lang="zh">潍坊瑞司恩工业科技有限公司</h1>
-  <h1 class="logo" data-lang="en">Weifang Risen Industrial Technology Co., Ltd.</h1>
-  <nav>
-    <ul>
-      <li><a href="index.html" data-lang="zh">首页</a><a href="index.html" data-lang="en">Home</a></li>
-      <li><a href="about.html" data-lang="zh">关于我们</a><a href="about.html" data-lang="en">About</a></li>
-      <li><a href="products.html" data-lang="zh">产品中心</a><a href="products.html" data-lang="en">Products</a></li>
-      <li><a href="contact.html" class="active" data-lang="zh">联系我们</a><a href="contact.html" class="active" data-lang="en">Contact</a></li>
-    </ul>
-  </nav>
-  <div class="lang-switch">
-    <button onclick="switchLang('zh')">中文</button>
-    <button onclick="switchLang('en')">EN</button>
-  </div>
-</div>
-</header>
+  <footer>
+    <div class="container">
+      <p data-i18n="footer">© Weifang Risen Industrial Technology Co., Ltd.</p>
+    </div>
+  </footer>
 
-<section class="page">
-<div class="container">
-  <h2 data-lang="zh">联系我们</h2>
-  <h2 data-lang="en">Contact Us</h2>
-  <p data-lang="zh"><strong>电话：</strong> +86 18265601080</p>
-  <p data-lang="en"><strong>Phone:</strong> +86 18265601080</p>
-  <p data-lang="zh"><strong>Email：</strong> MrRisen1107@gmail.com</p>
-  <p data-lang="en"><strong>Email:</strong> MrRisen1107@gmail.com</p>
-  <p data-lang="zh">您也可以通过以下表单给我们留言：</p>
-  <p data-lang="en">You can also contact us via the form below:</p>
-
-  <!-- EmailJS 表单 -->
-  <form id="contact-form">
-    <label data-lang="zh">您的姓名:<br>
-      <input type="text" name="user_name" required>
-    </label>
-    <label data-lang="en">Name:<br>
-      <input type="text" name="user_name" required>
-    </label><br>
-
-    <label data-lang="zh">您的邮箱:<br>
-      <input type="email" name="user_email" required>
-    </label>
-    <label data-lang="en">Email:<br>
-      <input type="email" name="user_email" required>
-    </label><br>
-
-    <label data-lang="zh">留言内容:<br>
-      <textarea name="message" rows="5" required></textarea>
-    </label>
-    <label data-lang="en">Message:<br>
-      <textarea name="message" rows="5" required></textarea>
-    </label><br>
-
-    <button type="submit" data-lang="zh">提交</button>
-    <button type="submit" data-lang="en">Submit</button>
-  </form>
-</div>
-</section>
-
-<footer>
-<div class="container">
-  <p data-lang="zh">© 2025 潍坊瑞司恩工业科技有限公司</p>
-  <p data-lang="en">© 2025 Weifang Risen Industrial Technology Co., Ltd.</p>
-</div>
-</footer>
+  <script src="js/main.js"></script>
+  <script src="js/email.js"></script>
 </body>
 </html>
+<body>
+  
+<header>
+  <div class="container">
+    <nav>
+      <a href="index.html" class="brand" data-i18n="company_name">Company</a>
+      <a href="about.html" data-i18n="about_title">About</a>
+      <a href="products.html" data-i18n="products_title">Products</a>
+      <a href="services.html" data-i18n="products_title">Services</a>
+      <a href="contact.html" data-i18n="contact_title">Contact</a>
+
+      <div class="lang" style="display:flex;gap:6px;">
+        <button class="lang-btn" data-lang="zh">中文</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="hi">HI</button>
+        <button class="lang-btn" data-lang="kk">KK</button>
+        <button class="lang-btn" data-lang="ar">AR</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+  <main class="container">
+    <h1 data-i18n="contact_title">Contact Us</h1>
+    <p data-i18n="phone">Phone</p>
+    <p data-i18n="email">Email</p>
+
+    <h2>Send a message</h2>
+    <form id="contactForm" onsubmit="sendContactForm(event)">
+      <label>Name</label>
+      <input type="text" name="from_name" required>
+      <label>Email</label>
+      <input type="email" name="from_email" required>
+      <label>Company</label>
+      <input type="text" name="company">
+      <label>Message</label>
+      <textarea name="message" rows="6" required></textarea>
+      <button id="sendBtn" type="submit">Send</button>
+    </form>
+  </main>
+  <footer><div class="container"><p data-i18n="footer">Footer</p></div></footer>
+  <script src="js/main.js"></script>
+  <script src="js/email.js"></script>
+</body></html>
